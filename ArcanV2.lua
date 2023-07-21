@@ -766,25 +766,7 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 	local CDframe = false
 	local Open = true
 	local BasePos = Frame.Position
-
-	uis.InputBegan:Connect(function(input,gp)
-		if gp then return end
-		if input.KeyCode == Enum.KeyCode.F and not CDframe then
-			CDframe = true
-			
-			if Open then
-				BasePos = Frame.Position
-				Frame:TweenPosition(Frame.Position + UDim2.new(0,2000,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.5)
-			else
-				Frame:TweenPosition(BasePos,Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.5)
-			end
-			Open = not Open
-			
-			task.delay(0.5,function()
-				CDframe = false
-			end)
-		end
-	end)
+	
 	local Paramters = {
 		["SpeedFrame"] = {
 			Active = false,
@@ -885,6 +867,28 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 			["Narthana"] = "LifesongEnchant" ,
 	}
 	local AllFunctions = {}
+
+	uis.InputBegan:Connect(function(input,gp)
+	        if gp then return end
+		if input.KeyCode == Enum.KeyCode.F and not CDframe then
+			CDframe = true
+			
+			if Open then
+				BasePos = Frame.Position
+				Frame:TweenPosition(Frame.Position + UDim2.new(0,2000,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.5)
+			else
+				Frame:TweenPosition(BasePos,Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.5)
+			end
+			Open = not Open
+			
+			task.delay(0.5,function()
+				CDframe = false
+			end)
+		elseif input.KeyCode == Enum.KeyCode.LeftControl then
+			local a = Paramters["SpeedFrame"].Active
+			Paramters["SpeedFrame"].Active = not a
+		end
+	end)
 	
 	local Atmo = nil
 	for i,v in pairs(Lighting:GetChildren())do
