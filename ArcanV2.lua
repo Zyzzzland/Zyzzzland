@@ -886,6 +886,8 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 			end)
 		elseif input.KeyCode == Enum.KeyCode.LeftControl then
 			local a = Paramters["SpeedFrame"].Active
+			Paramters["SpeedFrame"].CurrentSpeed = 16
+			task.wait()
 			Paramters["SpeedFrame"].Active = not a
 		end
 	end)
