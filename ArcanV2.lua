@@ -297,7 +297,7 @@ AtmosphereFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 AtmosphereFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AtmosphereFrame.BorderSizePixel = 0
 AtmosphereFrame.Size = UDim2.new(0.899999976, 0, 0, 40)
-Atmosphere.LayoutOrder = 1
+AtmosphereFrame.LayoutOrder = 1
 
 UICorner_9.Parent = AtmosphereFrame
 
