@@ -890,7 +890,7 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 			ButtonAnim(FrameB,aa)
 				
 			local a = Paramters["SpeedFrame"].Active
-			Paramters["SpeedFrame"].CurrentSpeed = 16
+			Paramters["SpeedFrame"].CurrentSpeed = aa == true and Paramters["SpeedFrame"].CurrentSpeed or 16
 			task.wait()
 			Paramters["SpeedFrame"].Active = not a
 
