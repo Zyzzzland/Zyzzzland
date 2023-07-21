@@ -833,7 +833,7 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 			"Hythera",
 			"Lodyssa",
 			"DeadReaper",
-			"Narthanaaa",
+			"Narthana",
 		},
 		
 		["OreFrame"] = {
@@ -882,7 +882,7 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 			["Hythera"] = "FireEnchant",
 			["Lodyssa"] = "MidasEnchant",
 			["DeadReaper"] = "ReaperEnchant",
-			["Narthanaaa"] = "LifesongEnchant" ,
+			["Narthana"] = "LifesongEnchant" ,
 	}
 	local AllFunctions = {}
 	
@@ -1014,7 +1014,7 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 	task.delay(0.5,function()
 		for i,v in pairs(workspace:GetDescendants()) do
 			if table.find(Paramters["NPCFrame"],v.Name) then
-				if v.Name == "Narthanaa" and not v:FindFirstChild("ProximityPrompt") then continue end
+				if v.Name == "Narthana" and not v:FindFirstChild("ProximityPrompt") then continue end
 				AllNpc[v.Name] = v
 			elseif table.find(Paramters["OreFrame"],v.Name) then
 				AllOre[v.Name] = v
@@ -1064,7 +1064,7 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 						else 
 							for i,v in pairs(workspace:GetDescendants()) do
 								if v.Name == k then
-									if v.Name == "Narthanaa" and not v:FindFirstChild("ProximityPrompt") then continue end
+									if v.Name == "Narthana" and not v:FindFirstChild("ProximityPrompt") then continue end
 									AllNpc[v.Name] = v
 								end
 							end	
