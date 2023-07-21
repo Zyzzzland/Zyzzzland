@@ -867,7 +867,7 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 			["Narthana"] = "LifesongEnchant" ,
 	}
 	local AllFunctions = {}
-
+	local CdFrameB = false
 	uis.InputBegan:Connect(function(input,gp)
 	        if gp then return end
 		if input.KeyCode == Enum.KeyCode.F and not CDframe then
@@ -884,11 +884,19 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 			task.delay(0.5,function()
 				CDframe = false
 			end)
-		elseif input.KeyCode == Enum.KeyCode.LeftControl then
+		elseif input.KeyCode == Enum.KeyCode.LeftControl and not CdFrameB then
+			CdFrameB = true
+			local aa = math.floor((FrameB.BackgroundColor3.R*255)+0.5) ~= 255 and true or false
+			ButtonAnim(FrameB,aa)
+				
 			local a = Paramters["SpeedFrame"].Active
 			Paramters["SpeedFrame"].CurrentSpeed = 16
 			task.wait()
 			Paramters["SpeedFrame"].Active = not a
+
+			task.delay(0.5,function()
+			     CdFrameB = false	
+			end)
 		end
 	end)
 	
