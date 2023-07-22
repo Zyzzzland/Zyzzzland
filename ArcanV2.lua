@@ -933,7 +933,7 @@ local function DRTCB_fake_script() -- Frame.LocalScript
 	local old2
 	function AllFunctions.BlockFrame(a)
 		if a and Atmo then
-			local Weapon = "Sword"
+			local Weapon = "Fist"
 			old = hookmetamethod(game, "__namecall", function(self, ...)
 				if self.Name == "RemoteFunction" and getnamecallmethod() == "FireServer" then
 					local args = {...}
