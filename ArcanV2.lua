@@ -1152,6 +1152,7 @@ local function ZGKXPH_fake_script()
 			"Cassian",
 			"Ryzar Infelio",
 			"Carnis",
+			"Field Doctor",
 	
 			"Enchants",
 			"Hythera",
@@ -1246,6 +1247,7 @@ local function ZGKXPH_fake_script()
 		["Cassian"] = "BasicWeapons",
 		["Ryzar Infelio"] = "Balde of the World",
 		["Carnis"] = "Impaler Mini-Boss",
+		["Field Doctor"] = "Gay_Boss"
 	
 		["Enchants"] = "nil",
 		["Hythera"] = "FireEnchant",
