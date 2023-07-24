@@ -1191,11 +1191,10 @@ local function ZGKXPH_fake_script()
 				args[1] = Paramters["BlockFrame"].Active == true and {true, true} or args[1]
 				return old(self, unpack(args))
 				
-			elseif args[2] == "FistQTE" or args[2] == "SwordQTE" or args[2] == "SpearQTE" or args[2] == "DaggerQTE" or args[2] == "StaffQTE" then
+			elseif args[2] == "FistQTE" or args[2] == "SwordQTE" or args[2] == "SpearQTE" or args[2] == "DaggerQTE" or args[2] == "StaffQTE" or args[2] == "ThorianQTE" then
 				args[1] = Paramters["PerfectFrame"].Active == true and true or args[1] 
 				return old(self, unpack(args))
 			elseif tostring(self) == "EnviroEffects" then
-                print(Paramters["FallFrame"].Active == true , args[2])
 				args[2] = Paramters["FallFrame"].Active == true and 0 or args[2]
 				return old(self, unpack(args))
 			end
@@ -1203,13 +1202,12 @@ local function ZGKXPH_fake_script()
 		return old(self, ...)
 	end)
 	task.wait()
-    local old2
+   local old2
 	old2 = hookmetamethod(game, "__namecall", function(self, ...)
-        local args = {...}
-		if getnamecallmethod() == "FireServer"  then
-            print(Paramters["FallFrame"].Active == true , args[2])
-            args[2] = Paramters["FallFrame"].Active == true and 0 or args[2]
-            return old(self, unpack(args))
+        	local args = {...}
+		if getnamecallmethod() == "FireServer" and tostring(self) == "EnviroEffects"  then
+            		args[2] = Paramters["FallFrame"].Active == true and 0 or args[2]
+            		return old2(self, unpack(args))
 		end
 		return old2(self, ...)
 	end)
