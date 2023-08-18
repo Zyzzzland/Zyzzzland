@@ -1129,6 +1129,10 @@ local function ZGKXPH_fake_script()
 			"Inette",
 			"Landrum",
 			"Ulys",
+			"Relan",
+			"Leoran",
+ 			"Gren",
+			"Hexer",
 	
 	
 			"Base Classes",
@@ -1225,6 +1229,10 @@ local function ZGKXPH_fake_script()
 		["Inette"] = "Assassin",
 		["Landrum"] = "Elementalist",
 		["Ulys"] = "Necromancer",
+		["Relan"] = "Lancer",
+		["Leoran"] = "Bladedancer",
+		["Gren"] = "Brawler",
+		["Hexer"] = "Ophelia",
 	
 		["Base Classes"] = "nil",
 		["Arandor"] = "Mage",
